@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcar Consulta</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div id="banner">
+        <img th:src="@{/imgs/banner.jpg}" width="100%">
+    </div>
+
+    <h1>Marcar Consulta</h1>
+    
+    <section id="marc">
+        <a th:href="@{/login}">Voltar</a>
+        <h3 th:text="${p.nome}"></h3>
+        <p>Clique em uma data para marcar</p>
+    <div th:each="x : ${cs}">
+        <p th:id="${x.id}" th:class="${x.disponivel}" th:text="${x.data}"></p>
+    </div>
+    <p id="selecionada"></p>
+    <form th:action="@{/marcarConsulta}" method="post">
+        <input type="hidden" id="passaID" th:field="${c.id}">
+        <input type="submit" value="Confirmar" id="enviar">
+    </form>
+    </section>
+
+    <script th:src="@{/js/marcar.js}"></script>
+    
+        
+    </script>
+    
+</body>
+</html>

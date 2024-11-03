@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" /> 
+</head>
+<body>
+
+    <div id="banner">
+        <img th:src="@{/imgs/banner.jpg}" width="100%">
+    </div>
+    <nav>
+        <a href="#" class="atual">Home</a>
+        <a th:href="@{/tratamentos}">Tratamentos</a>
+        <a th:href="@{/login}">Consultas</a>
+        <a th:href="@{/local}">Localização</a>
+    </nav>
+    <h1>Clínica Oftalmológica Dr. Carlos Plapler</h1>
+    <section id="index">
+        <img th:src="@{/imgs/drCarlos.PNG}" width="35%">
+        <p>Dr. Carlos Plapler, há mais de 40 anos tratando da saúde ocular. Formado em Oftalmologia na Universidade de São Paulo, e com vasta experiência em tratamentos e doenças dos olhos, cirurgias e prescrição de lentes. Passe por uma consulta com quem têm uma vida de dedicação aos olhos.</p>
+    </section>
+    <footer>
+        <div>
+            <a href="#">Home</a><br>
+            <a th:href="@{/tratamentos}">Tratamentos</a><br>
+            <a th:href="@{/login}">Consultas</a><br>
+            <a th:href="@{/local}">Localização</a>
+        </div>
+    </footer>
+    
+</body>
+</html>

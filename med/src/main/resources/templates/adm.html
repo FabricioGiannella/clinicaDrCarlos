@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+    <h1>Administração</h1>
+
+
+    <section id="admi">
+        <a th:href="@{/login}">Sair</a>
+        <h3>Gerar Consulta</h3>
+        <p><input type="date"> Hora: <select>
+            <option value="8:00">8:00</option>
+            <option value="8:30">8:30</option>
+            <option value="9:00">9:00</option>
+            <option value="9:30">9:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+        </select> <button id="btn1">Visualizar</button><span></span></p>
+    <form th:action="@{/gerarConsulta}" method="post">
+        <input type="hidden" id="hor" th:field="${c.data}">
+        <input type="submit" id="subm" value="Confirmar">
+    </form>
+    
+    </section>
+
+
+        <table id="tbl">
+            <thead>
+                <tr>
+                    <td>Data</td>
+                    <td>Paciente</td>
+                    <td>Email</td>
+                    <td>Telefone</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="x : ${cs}">
+                    <td th:text="${x.data}" th:class="${x.disponivel}"></td>
+                    <td th:text="${x.nome}" th:class="${x.disponivel}"></td>
+                    <td th:text="${x.email}" th:class="${x.disponivel}"></td>
+                    <td th:text="${x.tel}" th:class="${x.disponivel}"></td>
+                </tr>
+            </tbody>
+        </table>
+    
+        
+    
+
+    
+    <script th:src="@{/js/adm.js}"></script>
+
+</body>
+</html>

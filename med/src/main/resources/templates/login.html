@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+
+    <div id="banner">
+        <img th:src="@{/imgs/banner.jpg}" width="100%">
+    </div>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/tratamentos}">Tratamentos</a>
+        <a href="#" class="atual">Consultas</a>
+        <a th:href="@{/local}">Localização</a>
+    </nav>
+    <h1>Consultas</h1>
+    <section id="cons">
+        <h3>Login</h3>
+        <form th:action="@{/fazerLogin}" method="post">
+            <p>Email: <input type="text" th:field="${p.email}"></p>
+            <p>Senha: <input type="text" th:field="${p.senha}"></p>
+            <p><input type="submit" value="Login"></p>
+        </form>
+        <p th:text="${msg}"></p>
+        <p><a id="loginNovoCad" th:href="@{/cad}">Novo Cadastro</a></p>
+    </section>
+    <footer>
+        <div>
+            <a th:href="@{/}">Home</a><br>
+            <a th:href="@{/tratamentos}">Tratamentos</a><br>
+            <a href="#">Consultas</a><br>
+            <a th:href="@{/local}">Localização</a>
+        </div>
+    </footer>
+
+    <script th:src="@{/js/login.js}"></script>
+    
+</body>
+</html>

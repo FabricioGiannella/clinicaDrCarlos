@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div id="banner">
+        <img th:src="@{/imgs/banner.jpg}" width="100%">
+    </div>
+    <h1>Cadastrar</h1>
+
+    <section id="cad">
+        <h3>Cadastro Paciente</h3>
+        <form th:action="@{/cadastrar}" method="post">
+            <p>Nome: <input type="text" th:field="${p.nome}" size="40"></p>
+            <p>Telefone: <input type="text" th:field="${p.tel}"></p>
+            <p>Email: <input type="text" th:field="${p.email}"></p>
+            <p>Senha: <input type="text" th:field="${p.senha}"></p>
+            <p><input type="submit" value="cadastrar"></p>
+            <p th:text="${msg}"></p>
+        </form>
+    </section>
+
+   <script th:src="@{/js/cad.js}"></script>
+
+    
+    
+</body>
+</html>
